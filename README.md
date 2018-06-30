@@ -4,7 +4,7 @@ Bloq is a Blockchain framework written in Go. Largely for my own understanding, 
 
 ## Use
 
-## Smart Contracts
+## Smart Contracts
 
 ```golang
 // Dummy code, but you get the gist
