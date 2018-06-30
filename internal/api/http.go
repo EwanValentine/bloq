@@ -83,8 +83,8 @@ func (api *HTTPAPI) makeMuxRouter() http.Handler {
 // Run http api
 func (api *HTTPAPI) Run() error {
 	mux := api.makeMuxRouter()
-	httpAddr := os.Getenv("ADDR")
-	log.Println("Listening on ", os.Getenv("ADDR"))
+	httpAddr := os.Getenv("HTTP_ADDR")
+	log.Println("Listening on ", os.Getenv("HTTP_ADDR"))
 	s := &http.Server{
 		Addr:           ":" + httpAddr,
 		Handler:        mux,

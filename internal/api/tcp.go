@@ -65,7 +65,7 @@ func (api *TCPAPI) handleConn(conn net.Conn) {
 func (api *TCPAPI) Run() error {
 
 	// Start TCP and serve TCP server
-	server, err := net.Listen("tcp", ":"+os.Getenv("BC_ADDR"))
+	server, err := net.Listen("tcp", ":"+os.Getenv("TCP_ADDR"))
 	if err != nil {
 		return err
 	}
