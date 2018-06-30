@@ -20,7 +20,7 @@ type Contract struct {
 	// Contract - example: "users:>:5&money:>:1000"
 	Contract  string
 	Fulfilled bool
-	Callback  func([]byte) error
+	Callback  func(Block) error
 }
 
 // Block is an individual block
@@ -127,7 +127,7 @@ func (bc *Blockchain) GetBlocks() []Block {
 }
 
 // AddContract adds a new smart contract to the block chain
-func (bc *Blockchain) AddContract(contract string, callback func([]byte) error) error {
+func (bc *Blockchain) AddContract(contract string, callback func(Block) error) error {
 	if err := validateContract(contract); err != nil {
 		return err
 	}
@@ -207,7 +207,7 @@ func (bc *Blockchain) checkContracts(block Block) error {
 		// if equal to all of the rules set, then
 		// this smart contract has now been fulfilled
 		if rulesValidated == rulesCount {
-			val.Callback(block.Data)
+			val.Callback(block)
 			val.Fulfilled = true
 			bc.Contracts[key] = val
 		}

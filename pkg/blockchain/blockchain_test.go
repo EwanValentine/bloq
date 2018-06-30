@@ -48,7 +48,7 @@ func TestSmartContracts(t *testing.T) {
 
 	for key, val := range golden {
 		called := false
-		handler := func([]byte) error {
+		handler := func(block Block) error {
 			called = true
 			return nil
 		}
@@ -61,7 +61,7 @@ func TestSmartContracts(t *testing.T) {
 
 	for key, val := range notGolden {
 		called := false
-		handler := func([]byte) error {
+		handler := func(block Block) error {
 			called = true
 			return nil
 		}
@@ -74,7 +74,7 @@ func TestSmartContracts(t *testing.T) {
 
 	for key, val := range badContracts {
 		called := false
-		handler := func([]byte) error {
+		handler := func(block Block) error {
 			called = true
 			return nil
 		}
