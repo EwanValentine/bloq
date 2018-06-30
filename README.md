@@ -8,9 +8,9 @@ Bloq is a Blockchain framework written in Go. Largely for my own understanding, 
 
 ```golang
 // Dummy code, but you get the gist
-func handlerFunc(block Block) error {
+func handlerFunc(data []byte) error {
     d := map[string]string{}
-    if err := json.Marshal(block.Data, &d); err != nil {
+    if err := json.Marshal(data, &d); err != nil {
         return err
     }
     return makePayment(d["user_a"])
