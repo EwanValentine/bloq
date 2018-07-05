@@ -14,11 +14,13 @@ import (
 	"github.com/davecgh/go-spew/spew"
 )
 
+// TCPAPI -
 type TCPAPI struct {
 	blockchain bc
 	bcServer   chan []blockchain.Block
 }
 
+// NewTCPAPI instance
 func NewTCPAPI(bc bc) *TCPAPI {
 	return &TCPAPI{
 		blockchain: bc,

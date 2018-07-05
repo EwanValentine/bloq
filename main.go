@@ -24,11 +24,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	rest := api.NewHTTPAPI(bloq)
-	tcp := api.NewTCPAPI(bloq)
+	// rest := api.NewHTTPAPI(bloq)
+	// tcp := api.NewTCPAPI(bloq)
+	p2p := api.NewP2P(bloq)
 
-	go func() {
-		log.Fatal(tcp.Run())
-	}()
-	log.Fatal(rest.Run())
+	log.Println(p2p.Run())
 }

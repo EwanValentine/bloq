@@ -19,6 +19,7 @@ type message struct {
 type bc interface {
 	GetBlocks() []blockchain.Block
 	Append([]byte) (blockchain.Block, error)
+	ReplaceChain([]blockchain.Block)
 }
 
 // HTTPAPI is a standard REST API interface to the blockchain

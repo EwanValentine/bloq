@@ -114,7 +114,7 @@ func (bc *Blockchain) Append(data []byte) (Block, error) {
 		bc.ReplaceChain(newBlockchain)
 
 		// Does this async?
-		bc.checkContracts(newBlock)
+		// bc.checkContracts(newBlock)
 		spew.Dump(bc.Blocks)
 	}
 
